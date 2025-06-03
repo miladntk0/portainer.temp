@@ -1266,8 +1266,7 @@
               "default": true
             }
           ]
-        }
-      ]
+  
     },
     {
       "id": 61,
@@ -1519,9 +1518,8 @@
         "url": "https://github.com/portainer/templates",
         "stackfile": "edge/anyviz/docker-compose.yml"
       }
-    }
-  ]
-}
+    },
+
 {
   "version": "2",
   "templates": [
@@ -6782,45 +6780,56 @@
       ],
       "restart_policy": "unless-stopped"
     },
+   {
+  "version": "3",
+  "templates": [
     {
-       "id": 1001,
-       "type": 1,
-       "title": "SoftEther VPN Server",
-       "description": "SoftEther VPN Server - A powerful, easy-to-use multi-protocol VPN software",
-       "categories": ["VPN", "Network"],
-       "platform": "linux",
-       "image": "siomiz/softethervpn",
-       "ports": [
+      "id": 1,
+      "title": "قالب اول",
+      "type": 1,
+      "image": "image1"
+    },
+    {
+      "id": 1001,
+      "type": 1,
+      "title": "SoftEther VPN Server",
+      "description": "SoftEther VPN Server - A powerful, easy-to-use multi-protocol VPN software",
+      "categories": ["VPN", "Network"],
+      "platform": "linux",
+      "image": "siomiz/softethervpn",
+      "ports": [
         "500:500/udp",
         "4500:4500/udp",
         "1701:1701/tcp",
         "5555:5555/tcp"
-        "env": [
-        {
-         "name": "PSK",
-         "label": "Pre-Shared Key (IPSec)",
-         "default": "your_psk_here",
-         "description": "Pre-shared key for IPSec VPN connections",
-         "required": true
-     },
-     {
-      "name": "ADMIN_PASSWORD",
-      "label": "Admin Password",
-      "default": "admin_password",
-      "description": "Password for SoftEther VPN admin user",
-      "required": true
-     }
       ],
- 	 "volumes": [
-      {
-        "container": "/usr/local/vpnserver",
-        "bind": "/path/on/host/softether_data",
-        "readonly": false
-     }
-     ],
- 	 "restart_policy": "always",
-	  "logo": "https://raw.githubusercontent.com/SoftEtherVPN/SoftEtherVPN_Logo/master/softether-logo.png"
- },
+      "env": [
+        {
+          "name": "PSK",
+          "label": "Pre-Shared Key (IPSec)",
+          "default": "your_psk_here",
+          "description": "Pre-shared key for IPSec VPN connections",
+          "required": true
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Admin Password",
+          "default": "admin_password",
+          "description": "Password for SoftEther VPN admin user",
+          "required": true
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/usr/local/vpnserver",
+          "bind": "/path/on/host/softether_data",
+          "readonly": false
+        }
+      ],
+      "restart_policy": "always",
+      "logo": "https://raw.githubusercontent.com/SoftEtherVPN/SoftEtherVPN_Logo/master/softether-logo.png"
+    },
+
  {
       "type": 1,
       "title": "Babybuddy",
@@ -6865,7 +6874,8 @@
           "bind": "/volume1/docker/babybuddy/config"
         }
       ],
-      "restart_policy": "unless-stopped"
+   "restart_policy": "unless-stopped"
+
     }
   ]
 }
