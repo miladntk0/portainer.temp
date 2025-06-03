@@ -1,4 +1,60 @@
-
+{
+  "version": "3",
+  "templates": [
+    {
+      "id": 1,
+      "title": "قالب اول",
+      "type": 1,
+      "image": "image1"
+    },
+    {
+      "id": 1001,
+      "type": 1,
+      "title": "SoftEther VPN Server",
+      "description": "SoftEther VPN Server - A powerful, easy-to-use multi-protocol VPN software",
+      "categories": ["VPN", "Network"],
+      "platform": "linux",
+      "image": "siomiz/softethervpn",
+      "ports": [
+        "500:500/udp",
+        "4500:4500/udp",
+        "1701:1701/tcp",
+        "5555:5555/tcp"
+      ],
+      "env": [
+        {
+          "name": "PSK",
+          "label": "Pre-Shared Key (IPSec)",
+          "default": "your_psk_here",
+          "description": "Pre-shared key for IPSec VPN connections",
+          "required": true
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Admin Password",
+          "default": "admin_password",
+          "description": "Password for SoftEther VPN admin user",
+          "required": true
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/usr/local/vpnserver",
+          "bind": "/path/on/host/softether_data",
+          "readonly": false
+        }
+      ],
+      "restart_policy": "always",
+      "logo": "https://raw.githubusercontent.com/SoftEtherVPN/SoftEtherVPN_Logo/master/softether-logo.png"
+    },
+    {
+      "id": 2,
+      "title": "قالب دوم",
+      "type": 1,
+      "image": "image2"
+    }
+  ]
+},
 {
   "version": "3",
   "templates": [
@@ -6878,4 +6934,76 @@
 
     }
   ]
+   },
+ {
+      "id": 69,
+      "type": 3,
+      "title": "Anyviz Cloud Adaptor",
+      "description": "The cloud adapter connects local devices via OPC-UA, Modbus, Siemens, Beckhoff ADS, EtherNet/IP, M-Bus and BACnet to the AnyViz Cloud.",
+      "categories": ["edge"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.cdn.digitaloceanspaces.com/logos/anyviz.png",
+      "repository": {
+        "url": "https://github.com/portainer/templates",
+        "stackfile": "edge/anyviz/docker-compose.yml"
+      }
+},
+{
+  "version": "3",
+  "templates": [
+    {
+      "id": 1,
+      "title": "قالب اول",
+      "type": 1,
+      "image": "image1"
+    },
+    {
+      "id": 1001,
+      "type": 1,
+      "title": "SoftEther VPN Server",
+      "description": "SoftEther VPN Server - A powerful, easy-to-use multi-protocol VPN software",
+      "categories": ["VPN", "Network"],
+      "platform": "linux",
+      "image": "siomiz/softethervpn",
+      "ports": [
+        "500:500/udp",
+        "4500:4500/udp",
+        "1701:1701/tcp",
+        "5555:5555/tcp"
+      ],
+      "env": [
+        {
+          "name": "PSK",
+          "label": "Pre-Shared Key (IPSec)",
+          "default": "your_psk_here",
+          "description": "Pre-shared key for IPSec VPN connections",
+          "required": true
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Admin Password",
+          "default": "admin_password",
+          "description": "Password for SoftEther VPN admin user",
+          "required": true
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/usr/local/vpnserver",
+          "bind": "/path/on/host/softether_data",
+          "readonly": false
+        }
+      ],
+      "restart_policy": "always",
+      "logo": "https://raw.githubusercontent.com/SoftEtherVPN/SoftEtherVPN_Logo/master/softether-logo.png"
+    },
+    {
+      "id": 2,
+      "title": "قالب دوم",
+      "type": 1,
+      "image": "image2"
+    }
+  ]
 }
+
+ 
