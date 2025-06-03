@@ -6842,9 +6842,6 @@
       "restart_policy": "unless-stopped"
     },
     {
-     "version": "3",
-     "templates": [
-    {
       "id": 1001,
       "type": 1,
       "title": "SoftEther VPN Server",
