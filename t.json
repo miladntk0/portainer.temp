@@ -47,14 +47,6 @@
       "restart_policy": "always",
       "logo": "https://raw.githubusercontent.com/SoftEtherVPN/SoftEtherVPN_Logo/master/softether-logo.png"
     },
-    {
-      "id": 2,
-      "title": "قالب دوم",
-      "type": 1,
-      "image": "image2"
-    }
-  ]
-},
 {
   "version": "3",
   "templates": [
